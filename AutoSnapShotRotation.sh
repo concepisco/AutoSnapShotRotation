@@ -23,7 +23,7 @@ for volumeId in $volumes; do
                         for snapshotsId in $snapshots; do
                                 if [ $snapshotNumber -ge $ec2SnapshotGenerationNumber ]; then
                                         aws ec2 delete-snapshot --snapshot-id "${snapshotsId}";
-                                fi
+                                fi;
                                 snapshotNumber=`expr $snapshotNumber + 1`;
                         done;
                 fi;
